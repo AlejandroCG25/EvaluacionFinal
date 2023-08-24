@@ -7,10 +7,10 @@ import com.alejandro.evaluacioncontinua03.databinding.ItemProductoBinding
 import com.alejandro.evaluacioncontinua03.model.Producto
 import com.bumptech.glide.Glide
 
-class RVProductoAdapter (var products:List<Producto>): RecyclerView.Adapter<ProductVH>() {
+class RVProductoAdapter (var products:List<Producto>, val onProductClick: (Producto)-> Unit): RecyclerView.Adapter<ProductVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductVH {
         val binding= ItemProductoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return ProductVH(binding)
+        return ProductVH(binding, onProductClick)
     }
 
     override fun getItemCount(): Int = products.size
@@ -21,13 +21,17 @@ class RVProductoAdapter (var products:List<Producto>): RecyclerView.Adapter<Prod
 
 }
 
-class ProductVH(private val binding: ItemProductoBinding): RecyclerView.ViewHolder(binding.root){
+class ProductVH(private val binding: ItemProductoBinding, val onProductClick: (Producto)-> Unit): RecyclerView.ViewHolder(binding.root){
     fun bind(productos: Producto) {
 
         Glide.with(binding.root.context).load(productos.image).fitCenter().into(binding.txtImagen)
         binding.txtNombre.text = productos.name
         binding.txtJuego.text = "Juego: "+ productos.gameSeries
         binding.txtSerie.text = "Serie de Amiibo: "+productos.amiiboSeries
+
+        binding.root.setOnClickListener {
+            onProductClick(productos)
+        }
 
 
     }

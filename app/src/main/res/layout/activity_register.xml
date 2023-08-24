@@ -4,51 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <TextView
         android:id="@+id/txt_saludo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="228dp"
-        android:text="BIENVENIDOS"
+        android:layout_marginBottom="280dp"
+        android:text="BIENVENIDO NUEVO USUARIO"
         android:textColor="?attr/colorPrimary"
-        android:textSize="36sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/guideline_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:contentDescription="@null"
         android:layout_width="120dp"
         android:layout_height="120dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="@null"
         android:src="@drawable/logo"
         app:layout_constraintBottom_toTopOf="@+id/txt_tittle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="15dp"
         app:tint="?attr/colorPrimary" />
 
     <TextView
         android:id="@+id/txt_tittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text="AmiibOS"
         android:textColor="?attr/colorPrimary"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/guideline_medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="308dp" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_correo"
@@ -90,47 +92,39 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_password2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:hint="Confirmar Contraseña"
+        app:layout_constraintStart_toStartOf="parent"
+        app:startIconDrawable="@drawable/baseline_password_24"
+        app:layout_constraintTop_toBottomOf="@+id/til_password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btn_ingresar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="28dp"
+        android:padding="8dp"
+        android:text="Registrar"
         android:enabled="false"
-        android:padding="8dp"
-        android:text="Ingresar"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_password" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btn_google"
-        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-        android:layout_width="362dp"
-        android:layout_height="59dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/logog"
-        android:text="Iniciar con Google"
-        android:textAlignment="textStart"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_ingresar" />
-
-    <Button
-        android:id="@+id/btn_sign_up"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="20dp"
-        android:padding="8dp"
-        android:text="Registrarse"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_google" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

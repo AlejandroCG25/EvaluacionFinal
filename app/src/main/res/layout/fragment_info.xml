@@ -23,8 +23,8 @@
 
     <ImageView
         android:id="@+id/imgProduct"
-        android:layout_width="282dp"
-        android:layout_height="285dp"
+        android:layout_width="265dp"
+        android:layout_height="258dp"
         android:layout_marginTop="48dp"
         android:scaleType="centerCrop"
         android:src="@drawable/idat"
@@ -47,6 +47,17 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgProduct" />
+    <TextView
+        android:id="@+id/correo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="sm74825991@idat.edu.pe"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/alumno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/curso"
@@ -56,10 +67,11 @@
         android:text="
 Desarrollo de Aplicaciones Móviles 2"
         android:textColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@id/alumno"
+        app:layout_constraintTop_toBottomOf="@id/correo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
+
 
     <!-- Descripción del producto -->
 
@@ -67,13 +79,23 @@ Desarrollo de Aplicaciones Móviles 2"
         android:id="@+id/descripcion"
         android:layout_width="354dp"
         android:layout_height="106dp"
-        android:layout_marginTop="32dp"
-        android:text="Para este proyecto hemos puesto a pruba todo lo aplendido en clases y se ha consumido una api por medio de la biblioteca Retrofit, para así poder listar en nuestro fragment Lista los objetos obtenidos en formato JSON"
+        android:layout_marginTop="16dp"
+        android:text="Para este proyecto se ha puesto a prueba todo lo aprendido durante el curso; como el uso de firebase, retrofit, room, etc."
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/curso" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Cerrar Sesión"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcion" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

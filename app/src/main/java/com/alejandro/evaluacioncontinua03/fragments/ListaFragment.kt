@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.alejandro.evaluacioncontinua03.R
 import com.alejandro.evaluacioncontinua03.databinding.FragmentListaBinding
 import com.alejandro.evaluacioncontinua03.model.Producto
 import com.alejandro.evaluacioncontinua03.viewmodels.ProductoListViewModel
@@ -30,7 +32,10 @@ class ListaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = RVProductoAdapter(listOf())
+        val adapter = RVProductoAdapter(listOf()){producto->
+            val destination = ListaFragmentDirections.actionListaFragmentToDetalleFragment(producto)
+            findNavController().navigate(destination)
+        }
         binding.rvAmiiboList.adapter = adapter
         viewModel.products.observe(requireActivity()){
             adapter.products = it

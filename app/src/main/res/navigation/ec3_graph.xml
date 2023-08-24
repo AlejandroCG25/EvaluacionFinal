@@ -9,15 +9,46 @@
         android:id="@+id/listaFragment"
         android:name="com.alejandro.evaluacioncontinua03.fragments.ListaFragment"
         android:label="fragment_lista"
-        tools:layout="@layout/fragment_lista" />
+        tools:layout="@layout/fragment_lista" >
+        <action
+            android:id="@+id/action_listaFragment_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoritoFragment"
         android:name="com.alejandro.evaluacioncontinua03.fragments.FavoritoFragment"
         android:label="fragment_favorito"
-        tools:layout="@layout/fragment_favorito" />
+        tools:layout="@layout/fragment_favorito" >
+        <action
+            android:id="@+id/action_favoritoFragment_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/infoFragment"
         android:name="com.alejandro.evaluacioncontinua03.fragments.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="com.alejandro.evaluacioncontinua03.fragments.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <argument
+            android:name="producto"
+            app:argType="com.alejandro.evaluacioncontinua03.model.Producto" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarFragment"
+        android:name="com.alejandro.evaluacioncontinua03.fragments.AgregarFragment"
+        android:label="fragment_agregar"
+        tools:layout="@layout/fragment_agregar" >
+        <action
+            android:id="@+id/action_agregarFragment_to_listar2Fragment"
+            app:destination="@id/listar2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listar2Fragment"
+        android:name="com.alejandro.evaluacioncontinua03.fragments.Listar2Fragment"
+        android:label="fragment_listar2"
+        tools:layout="@layout/fragment_listar2" />
 </navigation>
